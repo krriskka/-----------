@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="assets/css/registration.css">
+    <script>
+        function togglePinCodeField() {
+            var role = document.getElementById("role").value;
+            var pincodeField = document.getElementById("pincodeField");
+
+            // Если выбрана роль администратора, показываем поле для ввода пин-кода, иначе скрываем его
+            if (role === "admin") {
+                pincodeField.style.visibility = "visible";
+                document.getElementById("pincode").setAttribute("required", "required");
+            } else {
+                pincodeField.style.visibility = "hidden";
+                document.getElementById("pincode").removeAttribute("required");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header style="background-image: url('https://via.placeholder.com/1500x600/FF5733/000000/?text=Login');">
+        <h1>Регистрация</h1>
+    </header>
+    
+    <section>
+        <div class="registration-form">
+            <h2>Регистрация</h2>
+            <form action="register.php" method="post"> <!-- Изменение: указываем register.php в качестве action -->
+                <input type="text" name="username" placeholder="Имя пользователя" required><br>
+                <input type="email" name="email" placeholder="Email" required><br>
+                <input type="password" name="password" placeholder="Пароль" required><br>
+                
+                <!-- Добавление панели выбора роли -->
+                <label for="role">Выберите роль:</label>
+                <select name="role" id="role" onchange="togglePinCodeField()">
+                    <option value="user">Обычный пользователь</option>
+                    <option value="admin">Администратор</option>
+                </select><br>
+                
+                <!-- Поле для ввода пин-кода -->
+                <div id="pincodeField" style="visibility: hidden;">
+                    <input type="text" id="pincode" name="pincode" placeholder="Пин-код"><br>
+                </div>
+
+                <input type="submit" value="Зарегистрироваться">
+            </form>
+            <p>Уже есть аккаунт? <a href="login.html">Войти</a></p>
+        </div>
+    </section>
+</body>
+</html>

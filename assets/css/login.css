@@ -1,0 +1,419 @@
+/* Общие стили */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    overflow: hidden;
+}
+
+/* Шапка */
+
+header {
+    background-color: #ff7f50;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Навигация */
+
+nav .user-info {
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 40px; /* Установим высоту строки равной высоте кнопки */
+}
+
+/* Стили для кнопки выхода */
+nav form {
+    display: inline-block;
+    margin-top: 6px; /* Добавим немного отступа сверху, чтобы скорректировать выравнивание */
+}
+
+/* Стили для кнопок */
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    vertical-align: middle; /* Выравнивание кнопок по вертикали */
+    transition: color 0.3s ease; /* Анимация изменения цвета текста */
+}
+
+/* Стили для навигационного меню */
+nav {
+    background-color: rgba(255, 204, 128, 0.8);
+    color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease; /* Анимация изменения цвета ссылок */
+}
+
+nav a:hover, nav button:hover {
+    color: #ff6f00; /* Цвет элемента при наведении */
+}
+
+/* Секции */
+
+
+section {
+    padding: 40px;
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Центрируем содержимое секции по горизонтали */
+    align-items: center;
+    height: calc(100vh - 200px); /* Высота раздела = высота экрана минус высота шапки и навигационного меню */
+    overflow-y: auto; /* Добавляем вертикальную прокрутку, если содержимое больше высоты экрана */
+}
+section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    text-align: center;
+}
+
+/* Форма входа */
+
+.login-form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff7f50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #ff6f00;
+}
+
+.login-form p {
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Медиа-запросы для адаптивной верстки */
+
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    .login-form {
+        width: 300px;
+        padding: 30px;
+        height: auto;
+    }
+
+    .login-form h2 {
+        font-size: 20px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        padding: 8px;
+        margin-bottom: 15px;
+    }
+
+    .login-form input[type="submit"] {
+        padding: 8px;
+    }
+
+    .login-form p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
+
+    nav a {
+        margin: 0 5px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    section p {
+        font-size: 14px;
+    }
+
+    .login-form {
+        width: 250px;
+        padding: 20px;
+    }
+
+    .login-form h2 {
+        font-size: 18px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        padding: 6px;
+        margin-bottom: 10px;
+    }
+
+    .login-form input[type="submit"] {
+        padding: 6px;
+    }
+
+    .login-form p {
+        font-size: 10px;
+    }
+}
+/* Добавленные медиа-запросы */
+
+@media only screen and (max-width: 1024px) {
+    header {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav {
+        padding: 12px 0;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    section {
+        padding: 25px;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    .login-form {
+        width: 350px;
+        padding: 35px;
+    }
+
+    .login-form h2 {
+        font-size: 22px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        padding: 9px;
+        margin-bottom: 15px;
+    }
+    .login-form input[type="submit"] {
+        padding: 9px;
+    }
+    
+    .login-form p {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+header {
+padding: 15px;
+}
+header h1 {
+    font-size: 22px;
+}
+
+nav {
+    padding: 8px 0;
+}
+
+nav a {
+    margin: 0 5px;
+}
+
+section {
+    padding: 15px;
+}
+
+section h2 {
+    font-size: 18px;
+}
+
+section p {
+    font-size: 14px;
+}
+
+.login-form {
+    width: 200px;
+    padding: 20px;
+}
+
+.login-form h2 {
+    font-size: 16px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+.login-form input[type="submit"] {
+    padding: 6px;
+}
+
+.login-form p {
+    font-size: 10px;
+}
+}
+
+@media only screen and (min-width: 1200px) {
+header {
+padding: 40px;
+}
+header h1 {
+    font-size: 40px;
+}
+
+nav {
+    padding: 20px 0;
+}
+
+nav a {
+    margin: 0 12px;
+}
+
+section {
+    padding: 50px;
+}
+
+section h2 {
+    font-size: 32px;
+}
+
+section p {
+    font-size: 20px;
+}
+
+.login-form {
+    width: 450px;
+    padding: 50px;
+}
+
+.login-form h2 {
+    font-size: 28px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.login-form input[type="submit"] {
+    padding: 12px;
+}
+
+.login-form p {
+    font-size: 16px;
+}
+}

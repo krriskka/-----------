@@ -1,0 +1,135 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+header {
+    background-color: #ff7f50;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+header h1 {
+    font-size: 36px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav .user-info {
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 40px; /* Установим высоту строки равной высоте кнопки */
+}
+
+/* Стили для кнопки выхода */
+nav form {
+    display: inline-block;
+    margin-top: 6px; /* Добавим немного отступа сверху, чтобы скорректировать выравнивание */
+}
+
+/* Стили для кнопок */
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    vertical-align: middle; /* Выравнивание кнопок по вертикали */
+    transition: color 0.3s ease; /* Анимация изменения цвета текста */
+}
+
+/* Стили для навигационного меню */
+nav {
+    background-color: rgba(255, 204, 128, 0.8);
+    color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease; /* Анимация изменения цвета ссылок */
+}
+
+nav a:hover, nav button:hover {
+    color: #ff6f00; /* Цвет элемента при наведении */
+}
+
+section {
+    padding: 40px 20px;
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+form {
+    margin-top: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+button[type="submit"] {
+    background-color: #ff7f50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+button[type="submit"]:hover {
+    background-color: #ff6f00;
+}
+.table_container {
+    max-width: 80%;
+    margin: 20px auto;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.1);
+    font-size:18px;
+  }

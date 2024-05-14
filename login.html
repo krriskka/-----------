@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <title>Вход в профиль</title>
+</head>
+<body>
+    <header style="background-image: url('https://via.placeholder.com/1500x600/FF5733/000000/?text=Login');">
+        <h1>Вход в профиль</h1>
+    </header>
+    <section>
+        <div class="login-form">
+            <h2>Вход</h2>
+            <form action="login.php" method="post"> <!-- Изменение адреса action для отправки данных на страницу login.php -->
+                <input type="text" name="username" placeholder="Логин" required><br> <!-- Добавление атрибута name для полей ввода -->
+                <input type="password" name="password" placeholder="Пароль" required><br> <!-- Добавление атрибута name для полей ввода -->
+                <input type="submit" value="Войти">
+            </form>
+            <p>Еще нет аккаунта? <a href="registration.html">Зарегистрироваться</a></p>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,145 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: rgba(255, 204, 128, 0.8);
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+header {
+    background-color: #ffcc80;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+}
+
+nav .user-info {
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 40px;
+}
+
+nav form {
+    display: inline-block;
+    margin-top: 6px;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+}
+
+nav {
+    background-color: rgba(255, 204, 128, 0.8);
+    color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav button:hover {
+    color: #ff6f00;
+}
+
+
+.grey_container {
+    min-height: 20%;
+    max-width: 95%;
+    margin: 15px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    transition: box-shadow 0.3s ease;
+}
+
+.grey_container:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.login_container {
+    min-height: 70%;
+    max-width: 40%;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    transition: box-shadow 0.3s ease;
+}
+
+.login_container:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.button_return {
+    outline:none;
+    height: 50px;
+    text-align: center;
+    width: 96% auto;
+    border-radius:21px;
+    border: 0;
+    background: #fff;
+    font-size:20px;
+    font-family: Times New Roman;
+    color:black;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    padding:10px;
+    display: block;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    transition: box-shadow 0.3s ease;
+}
+    
+  /* & обращение к своему родителю (буттон) */
+    .button_return:hover { 
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }

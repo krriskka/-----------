@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/indexstyle.css">
+    <title>Планирование вечеринок и событий</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('assets/images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            text-decoration: none;
+            color: #333;
+            background-color: #ffc107;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #ff9800;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 800px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                max-width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .container {
+                max-width: 70%;
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .container {
+                max-width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Планирование вечеринок и событий</h1>
+        <h2>Добро пожаловать</h2> <!-- Вставляем надпись -->
+        <div class="logo">
+            <img src="https://via.placeholder.com/150x150/FF5733/FFFFFF/?text=Event+Planner" alt="Логотип">
+        </div>
+        <a href="login.html" class="btn">Войти</a>
+        <a href="registration.html" class="btn">Регистрация</a>
+    </div>
+    
+</body>
+</html>

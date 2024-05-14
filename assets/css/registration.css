@@ -1,0 +1,398 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    overflow: hidden; /* Запрет прокрутки страницы */
+}
+header {
+    background-color: #ff7f50;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+header h1 {
+    font-size: 36px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+nav .user-info {
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 40px; /* Установим высоту строки равной высоте кнопки */
+}
+
+/* Стили для кнопки выхода */
+nav form {
+    display: inline-block;
+    margin-top: 6px; /* Добавим немного отступа сверху, чтобы скорректировать выравнивание */
+}
+
+/* Стили для кнопок */
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    vertical-align: middle; /* Выравнивание кнопок по вертикали */
+    transition: color 0.3s ease; /* Анимация изменения цвета текста */
+}
+
+/* Стили для навигационного меню */
+nav {
+    background-color: rgba(255, 204, 128, 0.8);
+    color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease; /* Анимация изменения цвета ссылок */
+}
+
+nav a:hover, nav button:hover {
+    color: #ff6f00; /* Цвет элемента при наведении */
+}
+section {
+    padding: 40px;
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Центрируем содержимое секции по горизонтали */
+    align-items: center;
+    height: calc(100vh - 200px); /* Высота раздела = высота экрана минус высота шапки и навигационного меню */
+    overflow-y: auto; /* Добавляем вертикальную прокрутку, если содержимое больше высоты экрана */
+}
+section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    text-align: center;
+}
+.registration-form {
+    width: 400px; /* Увеличиваем ширину формы */
+    margin: 0 auto; /* Центрируем форму по горизонтали */
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px; /* Задаем высоту формы */
+    position: absolute;
+    top: 50%; /* Размещаем форму по вертикали на 50% относительно родительского элемента */
+    left: 50%; /* Размещаем форму по горизонтали на 50% относительно родительского элемента */
+    transform: translate(-50%, -50%); /* Смещаем форму обратно на половину её собственной ширины и высоты, чтобы она оказалась точно посередине страницы */
+}
+.registration-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.registration-form input[type="text"],
+.registration-form input[type="password"],
+.registration-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.registration-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff7f50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.registration-form input[type="submit"]:hover {
+    background-color: #ff6f00;
+}
+.registration-form p {
+    font-size: 14px;
+    text-align: center;
+}
+/* Медиа-запросы для адаптивной верстки */
+
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    .registration-form {
+        width: 300px;
+        padding: 30px;
+        height: auto;
+    }
+
+    .registration-form h2 {
+        font-size: 20px;
+    }
+
+    .registration-form input[type="text"],
+    .registration-form input[type="password"] {
+        padding: 8px;
+        margin-bottom: 15px;
+    }
+
+    .registration-form input[type="submit"] {
+        padding: 8px;
+    }
+
+    .registration-form p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
+
+    nav a {
+        margin: 0 5px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    section p {
+        font-size: 14px;
+    }
+
+    .registration-form {
+        width: 250px;
+        padding: 20px;
+    }
+
+    .registration-form h2 {
+        font-size: 18px;
+    }
+
+    .registration-form input[type="text"],
+    .registration-form input[type="password"] {
+        padding: 6px;
+        margin-bottom: 10px;
+    }
+
+    .registration-form input[type="submit"] {
+        padding: 6px;
+    }
+
+    .registration-form p {
+        font-size: 10px;
+    }
+}
+/* Добавленные медиа-запросы */
+
+@media only screen and (max-width: 1024px) {
+    header {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav {
+        padding: 12px 0;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    section {
+        padding: 25px;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    .registration-form {
+        width: 350px;
+        padding: 35px;
+    }
+
+    .registration-form h2 {
+        font-size: 22px;
+    }
+
+    .registration-form input[type="text"],
+    .registration-form input[type="password"] {
+        padding: 9px;
+        margin-bottom: 15px;
+    }
+    .registration-form input[type="submit"] {
+        padding: 9px;
+    }
+    
+    .registration-form p {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+header {
+padding: 15px;
+}
+header h1 {
+    font-size: 22px;
+}
+
+nav {
+    padding: 8px 0;
+}
+
+nav a {
+    margin: 0 5px;
+}
+
+section {
+    padding: 15px;
+}
+
+section h2 {
+    font-size: 18px;
+}
+
+section p {
+    font-size: 14px;
+}
+
+.registration-form {
+    width: 200px;
+    padding: 20px;
+}
+
+.registration-form h2 {
+    font-size: 16px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="password"] {
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+.registration-form input[type="submit"] {
+    padding: 6px;
+}
+
+.registration-form p {
+    font-size: 10px;
+}
+}
+
+@media only screen and (min-width: 1200px) {
+header {
+padding: 40px;
+}
+header h1 {
+    font-size: 40px;
+}
+
+nav {
+    padding: 20px 0;
+}
+
+nav a {
+    margin: 0 12px;
+}
+
+section {
+    padding: 50px;
+}
+
+section h2 {
+    font-size: 32px;
+}
+
+section p {
+    font-size: 20px;
+}
+
+.registration-form {
+    width: 450px;
+    padding: 50px;
+}
+
+.registration-form h2 {
+    font-size: 28px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="password"] {
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.registration-form input[type="submit"] {
+    padding: 12px;
+}
+
+.registration-form p {
+    font-size: 16px;
+}
+}
