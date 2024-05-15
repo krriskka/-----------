@@ -143,3 +143,16 @@ nav a:hover, nav button:hover {
     .button_return:hover { 
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
+    input[type="submit"] {
+        background-color: #ffcc80;
+        color: #333;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+        background-color: #ff6f00;
+        color: #fff;
+    }

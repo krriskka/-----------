@@ -1,9 +1,10 @@
 <?php
 
-$servername = "sql11.freemysqlhosting.net";
-$username = "sql11705022";
-$password = "YImWifSKV7";
-$dbname = "sql11705022";
+$servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
+$username = "sql7706675"; // Имя пользователя БД
+$password = "j3AaYzXKTl"; // Пароль к БД
+$dbname = "sql7706675"; // Имя вашей БД
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 mysqli_set_charset($conn, "utf8");
 

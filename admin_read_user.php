@@ -4,10 +4,11 @@ session_start();
 
 // Проверяем, существует ли параметр id перед выполнением дальнейших действий
 if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
-    $servername = "sql11.freemysqlhosting.net";
-    $username = "sql11705022";
-    $password = "YImWifSKV7";
-    $dbname = "sql11705022";
+    $servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
+    $username = "sql7706675"; // Имя пользователя БД
+    $password = "j3AaYzXKTl"; // Пароль к БД
+    $dbname = "sql7706675"; // Имя вашей БД
+    
     
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -64,27 +65,30 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
 <body class="body">
 
 <header style="background-image: url('https://via.placeholder.com/1500x600/FF5733/000000/?text=Event+Planner');">
-        <h1>Информация о пользоваетеле <?= htmlspecialchars($row["Username"]); ?></h1>
+        <h1>Планирование вечеринок и событий</h1>
     </header>
     <nav>
-        <a href="main.php">Home</a>
-        <a href="about.php">About</a>
-        <a href="service.php">Services</a>
-        <?php
-            if(isset($_SESSION['username'])){
-                echo '<div class="user-info">';
-                echo '<a href="account.php">';
-                echo '<button>' .$_SESSION['username'] . '</button>';
-                echo '</a>';
-                echo '</div>';
-                echo '<form action="logout.php" method="post">';
-                echo '<button type="submit" name="logout">Logout</button>';
-                echo '</form>';
-            } else {
-                echo '<a href="login.html">Login</a>';
-            }
-        ?>
-    </nav>
+    <a href="main.php">Главная</a>
+    <a href="about.php">О нас</a>
+    <a href="service.php">Наши услуги</a>
+    <a href="admin.php">Страница администратора</a>
+    <?php
+if(isset($_SESSION['username'])){
+    // Если пользователь авторизован, отображаем его имя и кнопку выхода
+    echo '<div class="user-info">';
+    echo '<a href="account.php">';
+    echo '<button>' .$_SESSION['username'] . '</button>';
+    echo '</a>';
+    echo '</div>';
+    echo '<form action="logout.php" method="post">';
+    echo '<button type="submit" name="logout">Выйти</button>';
+    echo '</form>';
+} else {
+    // Если пользователь не авторизован, перенаправляем его на страницу входа
+    echo '<a href="login.html">Войти</a>';
+}
+?>
+</nav>
 <div>
     <div style="position: relative; left:20px; top:20px; " class="login_container">
         <div class="page-header">

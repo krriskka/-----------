@@ -41,10 +41,11 @@ if(isset($_SESSION['username'])){
     // Выводим информацию о пользователе
     echo '<p>Имя пользователя: ' . $_SESSION['username'] . '</p>';
     // Подключаемся к базе данных для получения другой информации о пользователе
-    $servername = "sql11.freemysqlhosting.net"; // Имя сервера БД
-    $username = "sql11705022"; // Имя пользователя БД
-    $password = "YImWifSKV7"; // Пароль к БД
-    $dbname = "sql11705022"; // Имя вашей БД
+    $servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
+    $username = "sql7706675"; // Имя пользователя БД
+    $password = "j3AaYzXKTl"; // Пароль к БД
+    $dbname = "sql7706675"; // Имя вашей БД
+    
 
     // Создаем подключение
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -103,11 +104,11 @@ if(isset($_SESSION['username'])){
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       
         // Подключение к базе данных
-$servername = "sql11.freemysqlhosting.net"; // Имя сервера БД
-$username = "sql11702683"; // Имя пользователя БД
-$password = "L8F43JCex9"; // Пароль к БД
-$dbname = "sql11702683"; // Имя вашей БД
-
+        $servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
+        $username = "sql7706675"; // Имя пользователя БД
+        $password = "j3AaYzXKTl"; // Пароль к БД
+        $dbname = "sql7706675"; // Имя вашей БД
+        
 // Создание подключения
 $conn = new mysqli($servername, $username, $password, $dbname);
 

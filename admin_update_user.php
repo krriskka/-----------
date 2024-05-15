@@ -4,11 +4,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+$servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
+$username = "sql7706675"; // Имя пользователя БД
+$password = "j3AaYzXKTl"; // Пароль к БД
+$dbname = "sql7706675"; // Имя вашей БД
 
-$servername = "sql11.freemysqlhosting.net";
-$username = "sql11705022";
-$password = "YImWifSKV7";
-$dbname = "sql11705022";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -91,6 +91,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="./style_CRUD.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="body">
+<header style="background-image: url('https://via.placeholder.com/1500x600/FF5733/000000/?text=Event+Planner');">
+        <h1>Планирование вечеринок и событий</h1>
+    </header>
+    <nav>
+    <a href="main.php">Главная</a>
+    <a href="about.php">О нас</a>
+    <a href="service.php">Наши услуги</a>
+    <a href="admin.php">Страница администратора</a>
+    <?php
+if(isset($_SESSION['username'])){
+    // Если пользователь авторизован, отображаем его имя и кнопку выхода
+    echo '<div class="user-info">';
+    echo '<a href="account.php">';
+    echo '<button>' .$_SESSION['username'] . '</button>';
+    echo '</a>';
+    echo '</div>';
+    echo '<form action="logout.php" method="post">';
+    echo '<button type="submit" name="logout">Выйти</button>';
+    echo '</form>';
+} else {
+    // Если пользователь не авторизован, перенаправляем его на страницу входа
+    echo '<a href="login.html">Войти</a>';
+}
+?>
+</nav>
 <div class="create_container">
     <div>
         <form action="admin.php">

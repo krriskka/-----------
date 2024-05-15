@@ -10,10 +10,11 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 }
 
 // Database connection parameters
-$servername = "sql11.freemysqlhosting.net";
-$username = "sql11705022";
-$password = "YImWifSKV7";
-$dbname = "sql11705022";
+$servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
+$username = "sql7706675"; // Имя пользователя БД
+$password = "j3AaYzXKTl"; // Пароль к БД
+$dbname = "sql7706675"; // Имя вашей БД
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -220,7 +221,13 @@ table.table-bordered.table-striped td {
         <a href="main.php">Home</a>
         <a href="about.php">About</a>
         <a href="service.php">Services</a>
+        <a href="admin_create.php" class="button_green">Добавить вечеринку</a>
+        <a href="admin.php">Страница администратора</a>
         <?php
+        if (isset($_POST['click']) && !empty($_POST['click'])) {
+            // Перенаправляем на создание записи
+            header("location:admin_create.php");
+        }
             if(isset($_SESSION['username'])){
                 echo '<div class="user-info">';
                 echo '<a href="account.php">';
@@ -300,7 +307,7 @@ table.table-bordered.table-striped td {
 
             <div class="color_font">
                 <div class="page-header clearfix">
-                    <h2 class="pull-left">Venues</h2>
+                    <h2 class="pull-left">Events</h2>
                     <form method="post"></form>
                 </div>
     <table class="table table-bordered table-striped">
@@ -310,6 +317,8 @@ table.table-bordered.table-striped td {
                 <th>Name</th>
                 <th>Date</th>
                 <th>Description</th>
+                <th>PosterLink</th>
+                <th>Type</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -328,6 +337,9 @@ table.table-bordered.table-striped td {
                         echo "<td>" . $row['EventName'] . "</td>";
                         echo "<td>" . $row['EventDate'] . "</td>";
                         echo "<td>" . $row['EventDescription'] . "</td>";
+                        echo "<td>" . $row['EventPoster'] . "</td>";
+                        echo "<td>" . $row['EventType'] . "</td>";
+                        echo "<td>" . $row['VenueID'] . "</td>";
                         echo "<td>";
                         echo "<a href='admin_read_event.php?id=" . $row['EventID'] . "' class='btn btn-outline-dark btn-sm'><i class='bi bi-eye-fill'></i></a>";
                         echo "<a href='admin_update_event.php?id=" . $row['EventID'] . "' class='btn btn-outline-dark btn-sm'><i class='bi bi-pen-fill'></i></a>";
@@ -355,7 +367,7 @@ table.table-bordered.table-striped td {
 
             <div class="color_font">
                 <div class="page-header clearfix">
-                    <h2 class="pull-left">Venues</h2>
+                    <h2 class="pull-left">Users</h2>
                     <form method="post"></form>
                 </div>
 

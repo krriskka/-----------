@@ -2,10 +2,10 @@
 session_start();
 
 // Подключение к базе данных
-$servername = "sql11.freemysqlhosting.net"; // Имя сервера БД
-$username = "sql11705022"; // Имя пользователя БД
-$password = "YImWifSKV7"; // Пароль к БД
-$dbname = "sql11705022"; // Имя вашей БД
+$servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
+$username = "sql7706675"; // Имя пользователя БД
+$password = "j3AaYzXKTl"; // Пароль к БД
+$dbname = "sql7706675"; // Имя вашей БД
 
 // Создание подключения
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -29,17 +29,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         // Получаем ID последней вставленной записи (userid)
-        $userid = $conn->insert_id;
+        $UserID = $conn->insert_id;
 
         // Проверяем, является ли пользователь администратором
         $isAdmin = ($_POST['role'] === 'admin') ? 1 : 0;
 
         // Обновляем запись пользователя в базе данных с указанием его роли
-        $update_sql = "UPDATE Users SET isAdmin=$isAdmin WHERE userid=$userid";
+        $update_sql = "UPDATE Users SET isAdmin=$isAdmin WHERE UserID=$UserID";
         if ($conn->query($update_sql) === TRUE) {
             // Сохраняем username и userid в сессии
             $_SESSION['username'] = $username;
-            $_SESSION['userid'] = $userid;
+            $_SESSION['UserID'] = $UserID;
 
             // Проверяем роль пользователя и перенаправляем на соответствующую страницу
             if ($isAdmin) {

@@ -2,10 +2,10 @@
 session_start(); // Начало сессии для хранения состояния авторизации пользователя
 
 // Подключение к базе данных
-$servername = "sql11.freemysqlhosting.net"; // Имя сервера БД
-$username = "sql11705022"; // Имя пользователя БД
-$password = "YImWifSKV7"; // Пароль к БД
-$dbname = "sql11705022"; // Имя вашей БД
+$servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
+$username = "sql7706675"; // Имя пользователя БД
+$password = "j3AaYzXKTl"; // Пароль к БД
+$dbname = "sql7706675"; // Имя вашей БД
 
 // Создание подключения
 $conn = new mysqli($servername, $username, $password, $dbname);

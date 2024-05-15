@@ -8,35 +8,30 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Наши услуги</title>
     <link rel="stylesheet" href="assets/css/service.css">
-
 </head>
 <body>
-
-
     <header style="background-image: url('https://via.placeholder.com/1500x600/FF5733/000000/?text=Event+Planner');">
         <h1>Планирование вечеринок и событий</h1>
     </header>
     <nav>
-    <a href="main.php">Главная</a>
-    <a href="about.php">О нас</a>
-    <a href="service.php">Наши услуги</a>
-    <?php
-if(isset($_SESSION['username'])){
-    // Если пользователь авторизован, отображаем его имя и кнопку выхода
-    echo '<div class="user-info">';
-    echo '<a href="account.php">';
-    echo '<button>' . $_SESSION['username'] . '</button>';
-    echo '</a>';
-    echo '</div>';
-    echo '<form action="logout.php" method="post">';
-    echo '<button type="sumbit" name="logout">Выйти</button>';
-    echo '</form>';
-} else {
-    // Если пользователь не авторизован, перенаправляем его на страницу входа
-    echo '<a href="login.html">Войти</a>';
-}
-?>
-</nav>
+        <a href="main.php">Главная</a>
+        <a href="about.php">О нас</a>
+        <a href="service.php">Наши услуги</a>
+        <?php
+        if(isset($_SESSION['username'])){
+            echo '<div class="user-info">';
+            echo '<a href="account.php">';
+            echo '<button>' . $_SESSION['username'] . '</button>';
+            echo '</a>';
+            echo '</div>';
+            echo '<form action="logout.php" method="post" style="display:inline;">';
+            echo '<button type="submit" name="logout">Выйти</button>';
+            echo '</form>';
+        } else {
+            echo '<a href="login.html">Войти</a>';
+        }
+        ?>
+    </nav>
     <section>
         <h2>Наши услуги</h2>
         <p>Мы предлагаем полный спектр услуг по планированию и организации мероприятий, включая:</p>
@@ -48,7 +43,6 @@ if(isset($_SESSION['username'])){
             <li>Кейтеринг и обслуживание гостей</li>
             <li>И многое другое!</li>
         </ul>
-        <!-- Форма для заказа услуги -->
         <form id="orderForm">
             <label for="service">Выберите услугу:</label>
             <select name="service" id="service">
@@ -57,7 +51,6 @@ if(isset($_SESSION['username'])){
                 <option value="decorations">Декорации и украшения</option>
                 <option value="music">Предоставление профессиональной музыки и развлечений</option>
                 <option value="catering">Кейтеринг и обслуживание гостей</option>
-                <!-- Добавьте другие ваши услуги как варианты выбора -->
             </select>
             <label for="name">Ваше имя:</label>
             <input type="text" id="name" name="name" required>
@@ -67,7 +60,6 @@ if(isset($_SESSION['username'])){
         </form>
     </section>
     
-    <!-- Добавим раздел для планирования вечеринки -->
     <section>
         <h2>Планирование вечеринки</h2>
         <p>Вы можете связаться с нами для организации вашей следующей вечеринки! Заполните форму ниже, и мы свяжемся с вами в ближайшее время:</p>
@@ -84,7 +76,6 @@ if(isset($_SESSION['username'])){
         </form>
     </section>
     
-    <!-- Добавим контактную информацию для организаторов -->
     <section>
         <h2>Контакты для организаторов</h2>
         <p>Если вы заинтересованы в сотрудничестве или у вас есть вопросы, пожалуйста, свяжитесь с нами:</p>
@@ -92,52 +83,45 @@ if(isset($_SESSION['username'])){
         <p>Телефон: +1234567890</p>
     </section>
     <section>
-    <?php
+        <div class="events-container">
+            <?php
+            $servername = "sql7.freemysqlhosting.net";
+            $username = "sql7706675";
+            $password = "j3AaYzXKTl";
+            $dbname = "sql7706675";
 
-$servername = "sql11.freemysqlhosting.net"; // Имя сервера БД
-$username = "sql11705022"; // Имя пользователя БД
-$password = "YImWifSKV7"; // Пароль к БД
-$dbname = "sql11705022"; // Имя вашей БД
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            mysqli_set_charset($conn, "utf8");
 
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
 
-// Создание подключения
-$conn = new mysqli($servername, $username, $password, $dbname);
+            $sql = "SELECT Events.EventID, Events.EventName, Events.EventDate, Events.EventDescription, Events.EventPoster, Venues.VenueName, Venues.VenueAddress
+                    FROM Events
+                    INNER JOIN Venues ON Events.VenueID = Venues.VenueID";
+            $result = $conn->query($sql);
 
-// Проверка подключения
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// SQL запрос для выборки мероприятий и их мест проведения из базы данных
-$sql = "SELECT Events.EventID, Events.EventName, Events.EventDate, Events.EventDescription, Events.EventPoster, Venues.VenueName, Venues.VenueAddress
-        FROM Events
-        INNER JOIN Venues ON Events.VenueID = Venues.VenueID";
-$result = $conn->query($sql);
-
-// Если есть результаты запроса, отобразим их в виде афиш
-if ($result->num_rows > 0) {
-    // Выводим данные каждого мероприятия
-    while($row = $result->fetch_assoc()) {
-        echo "<div class='event'>";
-        // Проверяем, есть ли ссылка на изображение афиши
-        if (!empty($row["EventPoster"])) {
-            echo "<img src='" . $row["EventPoster"] . "' alt='" . $row["EventName"] . "' class='poster'>";
-        }
-        echo "<h3>" . $row["EventName"] . "</h3>";
-        echo "<p><strong>Date:</strong> " . $row["EventDate"] . "</p>";
-        echo "<p><strong>Description:</strong> " . $row["EventDescription"] . "</p>";
-        echo "<p><strong>Venue:</strong> " . $row["VenueName"] . "</p>";
-        echo "<p><strong>Address:</strong> " . $row["VenueAddress"] . "</p>";
-        // Добавим кнопку для перехода к бронированию билетов
-        echo "<a href='book_tickets.php?event_id=" . $row["EventID"] . "'><button>Book Tickets</button></a>";
-        echo "</div>";
-    }
-} else {
-    echo "0 results";
-}
-$conn->close();
-?>
-
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<div class='event'>";
+                    if (!empty($row["EventPoster"])) {
+                        echo "<img src='" . $row["EventPoster"] . "' alt='" . $row["EventName"] . "' class='poster'>";
+                    }
+                    echo "<h3>" . $row["EventName"] . "</h3>";
+                    echo "<p><strong>Дата:</strong> " . $row["EventDate"] . "</p>";
+                    echo "<p><strong>Описание:</strong> " . $row["EventDescription"] . "</p>";
+                    echo "<p><strong>Место:</strong> " . $row["VenueName"] . "</p>";
+                    echo "<p><strong>Адрес:</strong> " . $row["VenueAddress"] . "</p>";
+                    echo "<a href='book_tickets.php?event_id=" . $row["EventID"] . "'><button>Забронировать билеты</button></a>";
+                    echo "</div>";
+                }
+            } else {
+                echo "0 results";
+            }
+            $conn->close();
+            ?>
+        </div>
     </section>
 
     <script>

@@ -123,3 +123,48 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #ff6f00;
 }
+
+.event {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 200px; /* Устанавливаем фиксированную ширину для компактности */
+    height: auto;
+}
+
+.poster {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.event h3 {
+    margin: 5px 0;
+    font-size: 1.1em; /* Уменьшаем размер шрифта */
+}
+
+.event p {
+    margin: 3px 0;
+    font-size: 0.9em; /* Уменьшаем размер шрифта */
+}
+
+.event button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em; /* Уменьшаем размер шрифта */
+}
+
+.event button:hover {
+    background-color: #45a049;
+}
+

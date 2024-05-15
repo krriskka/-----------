@@ -19,6 +19,17 @@
                 document.getElementById("pincode").removeAttribute("required");
             }
         }
+
+        function validateForm(event) {
+            var role = document.getElementById("role").value;
+            var pincode = document.getElementById("pincode").value;
+            var validPincode = "0451"; // Заданный пин-код
+
+            if (role === "admin" && pincode !== validPincode) {
+                alert("Неправильный пин-код для роли администратора.");
+                event.preventDefault(); // Предотвращаем отправку формы
+            }
+        }
     </script>
 </head>
 <body>
@@ -29,7 +40,7 @@
     <section>
         <div class="registration-form">
             <h2>Регистрация</h2>
-            <form action="register.php" method="post"> <!-- Изменение: указываем register.php в качестве action -->
+            <form action="register.php" method="post" onsubmit="validateForm(event)"> <!-- Добавлен onsubmit для проверки формы -->
                 <input type="text" name="username" placeholder="Имя пользователя" required><br>
                 <input type="email" name="email" placeholder="Email" required><br>
                 <input type="password" name="password" placeholder="Пароль" required><br>
