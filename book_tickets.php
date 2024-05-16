@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Tickets</title>
-    <link rel="stylesheet" href="assets/css/service.css">
+    <link rel="stylesheet" href="assets/css/booking.css">
 </head>
 <body>
     <h1>Book Tickets for <?php echo htmlspecialchars($event_name); ?></h1>

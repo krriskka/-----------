@@ -32,3 +32,58 @@ body {
 .btn:hover {
     background-color: #ff9800;
 }
+/* Медиазапросы */
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+    .btn {
+        padding: 8px 16px;
+        margin: 8px;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+    .btn {
+        padding: 8px 16px;
+        margin: 8px;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        max-width: 95%;
+        padding: 10px;
+    }
+    .logo {
+        margin-bottom: 15px;
+    }
+    .btn {
+        padding: 6px 12px;
+        margin: 6px;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+    .btn {
+        padding: 5px 10px;
+        margin: 5px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 360px) {
+    .container {
+        max-width: 100%;
+        padding: 5px;
+    }
+    .btn {
+        padding: 4px 8px;
+        margin: 4px;
+        font-size: 12px;
+    }
+}

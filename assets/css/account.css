@@ -153,3 +153,81 @@ footer {
 .change-password button[type="submit"]:hover {
     background-color: #ff6f00;
 }
+/* Добавление медиа-запросов */
+
+/* Медиа-запрос для устройств с шириной экрана менее 768px (например, планшеты и смартфоны в вертикальной ориентации) */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 10px; /* Уменьшаем вертикальные отступы в заголовке */
+    }
+
+    header h1 {
+        font-size: 24px; /* Уменьшаем размер шрифта заголовка */
+    }
+
+    nav {
+        padding: 8px; /* Уменьшаем вертикальные отступы в навигационном меню */
+    }
+
+    nav .user-info {
+        display: block;
+        margin: 0 auto;
+        line-height: 30px; /* Уменьшаем высоту строки */
+    }
+
+    nav button {
+        line-height: 30px; /* Уменьшаем высоту кнопок */
+    }
+
+    section {
+        padding: 20px 10px; /* Уменьшаем вертикальные отступы в секциях */
+    }
+
+    .orders, .partyes {
+        overflow-x: auto;
+        width: 100%;
+        margin-top: 10px; /* Уменьшаем вертикальный отступ между таблицами */
+    }
+
+    .change-password input[type="password"] {
+        padding: 6px; /* Уменьшаем отступы в полях ввода */
+        margin-bottom: 8px; /* Уменьшаем вертикальный отступ между полями ввода */
+    }
+
+    .change-password button[type="submit"] {
+        padding: 8px 16px; /* Увеличиваем отступы в кнопке */
+    }
+}
+
+/* Медиа-запрос для устройств с шириной экрана менее 480px (например, смартфоны в вертикальной ориентации) */
+@media (max-width: 480px) {
+    header {
+        padding: 15px 10px; /* Уменьшаем вертикальные отступы в заголовке */
+    }
+
+    header h1 {
+        font-size: 20px; /* Дополнительно уменьшаем размер шрифта заголовка */
+    }
+
+    nav .user-info {
+        line-height: 24px; /* Уменьшаем высоту строки */
+    }
+
+    nav button {
+        line-height: 24px; /* Уменьшаем высоту кнопок */
+    }
+
+    section {
+        padding: 15px 10px; /* Уменьшаем вертикальные отступы в секциях */
+    }
+
+    .change-password input[type="password"] {
+        padding: 4px; /* Уменьшаем отступы в полях ввода */
+        margin-bottom: 6px; /* Уменьшаем вертикальный отступ между полями ввода */
+    }
+
+    .change-password button[type="submit"] {
+        padding: 6px 12px; /* Увеличиваем отступы в кнопке */
+        font-size: 14px; /* Уменьшаем размер шрифта кнопки */
+    }
+}

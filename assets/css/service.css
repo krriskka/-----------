@@ -25,19 +25,16 @@ header h1 {
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
 }
-
 nav .user-info {
     display: inline-block;
     margin-right: 10px;
     line-height: 40px; /* Установим высоту строки равной высоте кнопки */
 }
-
 /* Стили для кнопки выхода */
 nav form {
     display: inline-block;
     margin-top: 6px; /* Добавим немного отступа сверху, чтобы скорректировать выравнивание */
 }
-
 /* Стили для кнопок */
 nav button {
     background: none;
@@ -49,7 +46,6 @@ nav button {
     vertical-align: middle; /* Выравнивание кнопок по вертикали */
     transition: color 0.3s ease; /* Анимация изменения цвета текста */
 }
-
 /* Стили для навигационного меню */
 nav {
     background-color: rgba(255, 204, 128, 0.8);
@@ -57,18 +53,15 @@ nav {
     padding: 10px;
     text-align: center;
 }
-
 nav a {
     color: #333;
     text-decoration: none;
     margin: 0 10px;
     transition: color 0.3s ease; /* Анимация изменения цвета ссылок */
 }
-
 nav a:hover, nav button:hover {
     color: #ff6f00; /* Цвет элемента при наведении */
 }
-
 section {
     padding: 40px 20px;
     margin-top: 40px;
@@ -123,7 +116,6 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #ff6f00;
 }
-
 .event {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -137,22 +129,18 @@ button[type="submit"]:hover {
     width: 200px; /* Устанавливаем фиксированную ширину для компактности */
     height: auto;
 }
-
 .poster {
     max-width: 100%;
     border-radius: 8px;
 }
-
 .event h3 {
     margin: 5px 0;
     font-size: 1.1em; /* Уменьшаем размер шрифта */
 }
-
 .event p {
     margin: 3px 0;
     font-size: 0.9em; /* Уменьшаем размер шрифта */
 }
-
 .event button {
     margin-top: 10px;
     padding: 5px 10px;
@@ -163,8 +151,137 @@ button[type="submit"]:hover {
     cursor: pointer;
     font-size: 0.9em; /* Уменьшаем размер шрифта */
 }
-
 .event button:hover {
     background-color: #45a049;
 }
-
+/* Медиазапросы */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 32px;
+    }
+    section {
+        padding: 30px 15px;
+        margin-top: 30px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    p {
+        font-size: 16px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    textarea {
+        padding: 8px;
+        margin-bottom: 15px;
+    }
+    button[type="submit"] {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .event {
+        width: 180px; /* Уменьшаем фиксированную ширину для планшетов */
+    }
+}
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        margin: 5px 0;
+    }
+    .event {
+        width: 160px; /* Уменьшаем фиксированную ширину для больших смартфонов */
+    }
+}
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 28px;
+    }
+    nav a {
+        font-size: 14px;
+        margin: 4px 0;
+    }
+    section {
+        padding: 20px 10px;
+        margin-top: 20px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 14px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    textarea {
+        padding: 6px;
+        margin-bottom: 10px;
+    }
+    button[type="submit"] {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    .event {
+        width: 140px; /* Уменьшаем фиксированную ширину для смартфонов */
+    }
+    .event h3 {
+        font-size: 1em;
+    }
+    .event p {
+        font-size: 0.8em;
+    }
+    .event button {
+        padding: 4px 8px;
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+    nav a {
+        font-size: 12px;
+    }
+    section {
+        padding: 15px 8px;
+        margin-top: 15px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    p {
+        font-size: 12px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    textarea {
+        padding: 5px;
+        margin-bottom: 8px;
+    }
+    button[type="submit"] {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    .event {
+        width: 120px; /* Уменьшаем фиксированную ширину для маленьких смартфонов */
+    }
+    .event h3 {
+        font-size: 0.9em;
+    }
+    .event p {
+        font-size: 0.7em;
+    }
+    .event button {
+        padding: 3px 6px;
+        font-size: 0.7em;
+    }
+}
