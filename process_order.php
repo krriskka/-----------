@@ -21,12 +21,12 @@ if ($conn->connect_error) {
 }
 
 // Получение UserID из сессии или другого места, где он доступен
-if(isset($_SESSION["userid"])) {
-    $userid = $_SESSION["userid"];
+if(isset($_SESSION["UserID"])) {
+    $UserID = $_SESSION["UserID"];
 } 
 
 // Подготовка и выполнение запроса на добавление заказа
-$sql = "INSERT INTO Orders (UserID, Service, Name, Email) VALUES ('$userid', '$service', '$name', '$email')";
+$sql = "INSERT INTO Orders (UserID, Service, Name, Email) VALUES ('$UserID', '$service', '$name', '$email')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Заказ успешно размещен!";

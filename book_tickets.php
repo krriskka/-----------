@@ -1,16 +1,16 @@
 <?php
 session_start();
 
-// Подключение к базе данных (замените значения на свои)
-$servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
-$username = "sql7706675"; // Имя пользователя БД
-$password = "j3AaYzXKTl"; // Пароль к БД
-$dbname = "sql7706675"; // Имя вашей БД
-
+// Подключение к базе данных
+$servername = "sql7.freemysqlhosting.net";
+$username = "sql7706675";
+$password = "j3AaYzXKTl";
+$dbname = "sql7706675";
 
 // Создание подключения
 $conn = new mysqli($servername, $username, $password, $dbname);
 mysqli_set_charset($conn, "utf8");
+
 // Проверка подключения
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -21,14 +21,15 @@ if (isset($_GET['event_id'])) {
     $event_id = $_GET['event_id'];
 
     // Запрос к базе данных для получения информации о мероприятии
-    $sql = "SELECT * FROM Events WHERE EventID = $event_id";
+    $sql = "SELECT e.*, v.VenueName FROM Events e
+            JOIN Venues v ON e.VenueID = v.VenueID
+            WHERE EventID = $event_id";
 
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $event = $result->fetch_assoc();
-        // Получаем информацию о местах проведения мероприятия (если такая информация есть)
-        $venue_name = $event['VenueID'];
+        $venue_name = $event['VenueName'];
         $event_name = $event['EventName'];
         $event_date = $event['EventDate'];
         $event_description = $event['EventDescription'];
@@ -44,16 +45,22 @@ if (isset($_GET['event_id'])) {
 
 // Если форма бронирования отправлена
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Обработка бронирования билетов
-    // Здесь вы можете добавить код для обработки бронирования
-    // Например, добавить данные о брони в базу данных
-    // и вывести сообщение об успешном бронировании
     $name = $_POST['name'];
     $email = $_POST['email'];
-    
+    $user_id = $_SESSION['UserID']; // Предполагается, что ID пользователя хранится в сессии
 
-    // В этом примере просто выводим информацию о выбранных местах
-    echo "<p>Thank you, $name! Your tickets for $event_name on $event_date at $venue_name have been booked.</p>";
+    // Запрос для вставки данных о бронировании в базу данных
+    $stmt = $conn->prepare("INSERT INTO Bookings (EventID, UserID, Name, Email, BookingDate) VALUES (?, ?, ?, ?, NOW())");
+    $stmt->bind_param("iiss", $event_id, $user_id, $name, $email);
+
+    if ($stmt->execute()) {
+        echo "<p>Thank you, $name! Your tickets for $event_name on $event_date at $venue_name have been booked.</p>";
+    } else {
+        echo "<p>Error: " . $stmt->error . "</p>";
+    }
+
+    $stmt->close();
+    $conn->close();
     exit;
 }
 ?>
@@ -67,15 +74,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="assets/css/service.css">
 </head>
 <body>
-    <h1>Book Tickets for <?php echo $event_name; ?></h1>
-    <p><?php echo $event_description; ?></p>
-    <p>Date: <?php echo $event_date; ?></p>
-    <p>Venue: <?php echo $venue_name; ?></p>
+    <h1>Book Tickets for <?php echo htmlspecialchars($event_name); ?></h1>
+    <p><?php echo htmlspecialchars($event_description); ?></p>
+    <p>Date: <?php echo htmlspecialchars($event_date); ?></p>
+    <p>Venue: <?php echo htmlspecialchars($venue_name); ?></p>
     <?php if (!empty($event_poster)) : ?>
-        <img src="<?php echo $event_poster; ?>" alt="Event Poster">
+        <img src="<?php echo htmlspecialchars($event_poster); ?>" alt="Event Poster">
     <?php endif; ?>
     
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?event_id=' . $event_id; ?>">
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" required><br><br>
         <label for="email">Your Email:</label>

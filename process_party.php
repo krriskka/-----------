@@ -22,12 +22,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if(isset($_SESSION["userid"])) {
-    $userid = $_SESSION["userid"];
+if(isset($_SESSION["UserID"])) {
+    $UserID = $_SESSION["UserID"];
 }
 
 // Подготовка и выполнение запроса на добавление вечеринки
-$sql = "INSERT INTO Parties (UserID, PartyType, Date, Guests, AdditionalInfo) VALUES ('$userid', '$partyType', '$date', '$guests', '$additionalInfo')";
+$sql = "INSERT INTO Parties (UserID, PartyType, Date, Guests, AdditionalInfo) VALUES ('$UserID', '$partyType', '$date', '$guests', '$additionalInfo')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Вечеринка успешно забронирована!";

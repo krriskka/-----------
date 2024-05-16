@@ -87,6 +87,10 @@ if(isset($_SESSION['username'])){
         <!-- PHP-код для отображения заказанных услуг -->
         <?php include 'user_partyes.php'; ?>
     </section>
+    <section class="bookings">
+        <!-- PHP-код для отображения заказанных услуг -->
+        <?php include 'user_booking.php'; ?>
+    </section>
     
     <section class="change-password">
     <!-- Форма для изменения пароля -->
