@@ -5,9 +5,9 @@ session_start();
 // Проверяем, существует ли параметр id перед выполнением дальнейших действий
 if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     $servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
-    $username = "sql7706675"; // Имя пользователя БД
-    $password = "j3AaYzXKTl"; // Пароль к БД
-    $dbname = "sql7706675"; // Имя вашей БД
+    $username = "sql7709451"; // Имя пользователя БД
+    $password = "4bisLes7Cr"; // Пароль к БД
+    $dbname = "sql7709451"; // Имя вашей БД
     
     
     // Create connection

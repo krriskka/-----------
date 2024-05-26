@@ -1,8 +1,8 @@
 <?php
-$servername = "sql7.freemysqlhosting.net";
-$username = "sql7706675";
-$password = "j3AaYzXKTl";
-$dbname = "sql7706675";
+$servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
+$username = "sql7709451"; // Имя пользователя БД
+$password = "4bisLes7Cr"; // Пароль к БД
+$dbname = "sql7709451"; // Имя вашей БД
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $eventType = $_POST['eventType'];

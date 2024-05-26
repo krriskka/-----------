@@ -11,9 +11,9 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
 
 // Database connection parameters
 $servername = "sql7.freemysqlhosting.net"; // Имя сервера БД
-$username = "sql7706675"; // Имя пользователя БД
-$password = "j3AaYzXKTl"; // Пароль к БД
-$dbname = "sql7706675"; // Имя вашей БД
+$username = "sql7709451"; // Имя пользователя БД
+$password = "4bisLes7Cr"; // Пароль к БД
+$dbname = "sql7709451"; // Имя вашей БД
 
 
 // Create connection
@@ -73,9 +73,9 @@ $conn->close();
         <h1>Admin Panel</h1>
     </header>
     <nav>
-        <a href="main.php">Home</a>
-        <a href="about.php">About</a>
-        <a href="service.php">Services</a>
+        <a href="main_admin.php">Home</a>
+        <a href="about_admin.php">About</a>
+        <a href="service_admin.php">Services</a>
         <a href="admin_create.php" class="button_green">Добавить вечеринку</a>
         <a href="admin.php">Страница администратора</a>
         <?php
@@ -85,7 +85,7 @@ $conn->close();
         }
             if(isset($_SESSION['username'])){
                 echo '<div class="user-info">';
-                echo '<a href="account.php">';
+                echo '<a href="account_admin.php">';
                 echo '<button>' .$_SESSION['username'] . '</button>';
                 echo '</a>';
                 echo '</div>';

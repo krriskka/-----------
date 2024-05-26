@@ -31,16 +31,14 @@ header h1 {
 nav .user-info {
     display: inline-block;
     margin-right: 10px;
-    line-height: 40px; /* Установим высоту строки равной высоте кнопки */
+    line-height: 40px;
 }
 
-/* Стили для кнопки выхода */
 nav form {
     display: inline-block;
-    margin-top: 6px; /* Добавим немного отступа сверху, чтобы скорректировать выравнивание */
+    margin-top: 6px;
 }
 
-/* Стили для кнопок */
 nav button {
     background: none;
     border: none;
@@ -48,11 +46,10 @@ nav button {
     font-size: inherit;
     color: inherit;
     padding: 0;
-    vertical-align: middle; /* Выравнивание кнопок по вертикали */
-    transition: color 0.3s ease; /* Анимация изменения цвета текста */
+    vertical-align: middle;
+    transition: color 0.3s ease;
 }
 
-/* Стили для навигационного меню */
 nav {
     background-color: rgba(255, 204, 128, 0.8);
     color: #333;
@@ -64,11 +61,11 @@ nav a {
     color: #333;
     text-decoration: none;
     margin: 0 10px;
-    transition: color 0.3s ease; /* Анимация изменения цвета ссылок */
+    transition: color 0.3s ease;
 }
 
 nav a:hover, nav button:hover {
-    color: #ff6f00; /* Цвет элемента при наведении */
+    color: #ff6f00;
 }
 
 section {
@@ -87,7 +84,38 @@ footer {
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Добавленные стили для секций */
+.user-info-container {
+    display: flex;
+    
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-info-container .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.user-info-container img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.user-info-container input[type="file"] {
+    display: none;
+}
+
+.user-info-container div {
+    flex-grow: 1;
+    margin-left: 10px; 
+    margin-bottom: 10px; 
+}
+
 
 .orders, .partyes, .change-password {
     margin-top: 20px;
@@ -121,8 +149,6 @@ footer {
     background-color: #ddd;
 }
 
-/* Стили для формы изменения пароля */
-
 .change-password form {
     margin-top: 20px;
 }
@@ -153,81 +179,78 @@ footer {
 .change-password button[type="submit"]:hover {
     background-color: #ff6f00;
 }
-/* Добавление медиа-запросов */
 
-/* Медиа-запрос для устройств с шириной экрана менее 768px (например, планшеты и смартфоны в вертикальной ориентации) */
 @media (max-width: 768px) {
     header {
-        padding: 20px 10px; /* Уменьшаем вертикальные отступы в заголовке */
+        padding: 20px 10px;
     }
 
     header h1 {
-        font-size: 24px; /* Уменьшаем размер шрифта заголовка */
+        font-size: 24px;
     }
 
     nav {
-        padding: 8px; /* Уменьшаем вертикальные отступы в навигационном меню */
+        padding: 8px;
     }
 
     nav .user-info {
         display: block;
         margin: 0 auto;
-        line-height: 30px; /* Уменьшаем высоту строки */
+        line-height: 30px;
     }
 
     nav button {
-        line-height: 30px; /* Уменьшаем высоту кнопок */
+        line-height: 30px;
     }
 
     section {
-        padding: 20px 10px; /* Уменьшаем вертикальные отступы в секциях */
+        padding: 20px 10px;
     }
 
     .orders, .partyes {
         overflow-x: auto;
         width: 100%;
-        margin-top: 10px; /* Уменьшаем вертикальный отступ между таблицами */
+        margin-top: 10px;
     }
 
     .change-password input[type="password"] {
-        padding: 6px; /* Уменьшаем отступы в полях ввода */
-        margin-bottom: 8px; /* Уменьшаем вертикальный отступ между полями ввода */
+        padding: 6px;
+        margin-bottom: 8px;
     }
 
     .change-password button[type="submit"] {
-        padding: 8px 16px; /* Увеличиваем отступы в кнопке */
+        padding: 8px 16px;
     }
 }
 
-/* Медиа-запрос для устройств с шириной экрана менее 480px (например, смартфоны в вертикальной ориентации) */
 @media (max-width: 480px) {
     header {
-        padding: 15px 10px; /* Уменьшаем вертикальные отступы в заголовке */
+        padding: 15px 10px;
     }
 
     header h1 {
-        font-size: 20px; /* Дополнительно уменьшаем размер шрифта заголовка */
+        font-size: 20px;
     }
 
     nav .user-info {
-        line-height: 24px; /* Уменьшаем высоту строки */
+        line-height: 24px;
     }
 
     nav button {
-        line-height: 24px; /* Уменьшаем высоту кнопок */
+        line-height: 24px;
     }
 
     section {
-        padding: 15px 10px; /* Уменьшаем вертикальные отступы в секциях */
+        padding: 15px 10px;
     }
 
     .change-password input[type="password"] {
-        padding: 4px; /* Уменьшаем отступы в полях ввода */
-        margin-bottom: 6px; /* Уменьшаем вертикальный отступ между полями ввода */
+        padding: 4px;
+        margin-bottom: 6px;
     }
 
     .change-password button[type="submit"] {
-        padding: 6px 12px; /* Увеличиваем отступы в кнопке */
-        font-size: 14px; /* Уменьшаем размер шрифта кнопки */
+        padding: 6px 12px;
+        font-size: 14px;
     }
 }

@@ -14,22 +14,27 @@ session_start();
         <h1>Личный кабинет</h1>
     </header>
     <nav>
-        <a href="main.php">Главная</a>
-        <a href="about.php">О нас</a>
-        <a href="service.php">Наши услуги</a>
+        <a href="main_admin.php">Home</a>
+        <a href="about_admin.php">About</a>
+        <a href="service_admin.php">Services</a>
+        <a href="admin.php">Страница администратора</a>
         <?php
-        if (isset($_SESSION['username'])) {
-            echo '<div class="user-info">';
-            echo '<a href="account.php">';
-            echo '<button>' . $_SESSION['username'] . '</button>';
-            echo '</a>';
-            echo '</div>';
-            echo '<form action="logout.php" method="post">';
-            echo '<button type="submit" name="logout">Выйти</button>';
-            echo '</form>';
-        } else {
-            echo '<a href="login.html">Войти</a>';
+        if (isset($_POST['click']) && !empty($_POST['click'])) {
+            // Перенаправляем на создание записи
+            header("location:admin_create.php");
         }
+            if(isset($_SESSION['username'])){
+                echo '<div class="user-info">';
+                echo '<a href="account_admin.php">';
+                echo '<button>' .$_SESSION['username'] . '</button>';
+                echo '</a>';
+                echo '</div>';
+                echo '<form action="logout.php" method="post">';
+                echo '<button type="submit" name="logout">Logout</button>';
+                echo '</form>';
+            } else {
+                echo '<a href="login.html">Login</a>';
+            }
         ?>
     </nav>
     <section class="user-info-container">
